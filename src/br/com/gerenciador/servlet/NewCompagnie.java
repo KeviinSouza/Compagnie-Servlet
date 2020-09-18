@@ -25,7 +25,7 @@ public class NewCompagnie extends HttpServlet {
 		DataBase db = new DataBase();
 		db.add(c);
 		
-		RequestDispatcher requestDispatch = request.getRequestDispatcher("/newRegister.jsp");
+		RequestDispatcher requestDispatch = request.getRequestDispatcher("/listc");
 		request.setAttribute("name", name);
 		request.setAttribute("age", age);
 		requestDispatch.forward(request, response);
