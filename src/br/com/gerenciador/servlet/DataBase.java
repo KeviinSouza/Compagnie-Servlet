@@ -12,11 +12,11 @@ public class DataBase {
 	static {
 		Compagnie compagnieOne = new Compagnie();
 		Compagnie compagnieTwo = new Compagnie();
-		compagnieOne.setName("Kevinho");
+		compagnieOne.setName("Kevin");
 		compagnieOne.setAge("22");
 		compagnieOne.setId(DataBase.id++);
-		compagnieTwo.setName("Fernandinho");
-		compagnieTwo.setAge("17");
+		compagnieTwo.setName("Fernanda");
+		compagnieTwo.setAge("19");
 		compagnieTwo.setId(DataBase.id++);
 		list.add(compagnieOne);
 		list.add(compagnieTwo);
