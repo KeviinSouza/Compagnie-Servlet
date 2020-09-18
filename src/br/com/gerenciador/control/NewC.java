@@ -13,7 +13,7 @@ import br.com.gerenciador.model.DataBase;
 public class NewC {
 
 	
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String name = request.getParameter("name");
 		String age = request.getParameter("age");
@@ -25,9 +25,9 @@ public class NewC {
 		DataBase db = new DataBase();
 		db.add(c);
 		
-		RequestDispatcher requestDispatch = request.getRequestDispatcher("/entry?action=list");
 		request.setAttribute("name", name);
 		request.setAttribute("age", age);
-		requestDispatch.forward(request, response);
+	
+		return "forward:/entry?action=list";
 	}
 }

@@ -9,7 +9,7 @@ import br.com.gerenciador.model.DataBase;
 
 public class RemoveC {
 	
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String idRequest = request.getParameter("id");
 		Integer id = Integer.valueOf(idRequest);
@@ -17,7 +17,7 @@ public class RemoveC {
 		DataBase db = new DataBase();
 		db.remove(id);
 		
-		response.sendRedirect("entry?action=list");
+		return "redirect:entry?action=list";
 	}
 
 }

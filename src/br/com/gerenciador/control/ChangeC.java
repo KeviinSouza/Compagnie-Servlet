@@ -10,7 +10,7 @@ import br.com.gerenciador.model.DataBase;
 
 public class ChangeC {
 	
-	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		String name = request.getParameter("name");
 		String age = request.getParameter("age");
@@ -22,7 +22,8 @@ public class ChangeC {
 		c.setName(name);
 		c.setAge(age);
 		
-		response.sendRedirect("entry?action=list");
+		return "redirect:entry?action=list";
+		
 	}
 
 }

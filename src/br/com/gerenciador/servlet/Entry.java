@@ -2,6 +2,7 @@ package br.com.gerenciador.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,31 +23,41 @@ public class Entry extends HttpServlet {
 			throws ServletException, IOException {
 
 		String action = request.getParameter("action");
+		String destiny = null;
 
 		if (action.equals("list")) {
 
 			ListC list = new ListC();
-			list.execute(request, response);
+			destiny = list.execute(request, response);
 
 		} else if (action.equals("change")) {
 
 			ChangeC company = new ChangeC();
-			company.execute(request, response);
+			destiny = company.execute(request, response);
 
 		} else if (action.equals("remove")) {
 
 			RemoveC remove = new RemoveC();
-			remove.execute(request, response);
+			destiny = remove.execute(request, response);
 			
 		} else if (action.equals("add")) {
 
 			NewC add = new NewC();
-			add.execute(request, response);
+			destiny = add.execute(request, response);
 			
 		} else if (action.equals("search")) {
-
+			
 			SearchC search = new SearchC();
-			search.execute(request, response);
+			destiny = search.execute(request, response);
+		}
+		
+		String[] destinyRequest = destiny.split(":");
+		
+		if(destinyRequest[0].equals("forward")) {
+			RequestDispatcher rd = request.getRequestDispatcher(destinyRequest[1]);
+			rd.forward(request, response);
+		} else {
+			response.sendRedirect(destinyRequest[1]);
 		}
 	}
 }
