@@ -14,7 +14,7 @@
 	<ul>
 		<core:forEach items="${compagnie}" var="c">
 			<li>${c.name} - ${c.age}</li>
-			<a href="/gerenciador/remove?id=${c.id}">Remove</a> - <a href="/gerenciador/EditCompagnie">Edit</a>
+			<a href="/gerenciador/remove?id=${c.id}">Remove</a> - <a href="/gerenciador/sherchid?id=${c.id}">Edit</a>
 		</core:forEach>
 	</ul>
 
