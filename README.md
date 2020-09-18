@@ -1,4 +1,4 @@
-# Compagnie-Servlet
+# Company-Servlet
 Projeto Alura - Servlet and JSP
 
   Pequeno projeto realizado na formação Java-Servlet(I and II) na AluraCursosOnline.
