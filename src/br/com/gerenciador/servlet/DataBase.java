@@ -43,4 +43,14 @@ public class DataBase {
 			}
 		}
 	}
+
+	public Compagnie getCompagnieById(Integer idRequest) {
+		for (Compagnie c : list) {
+			if (c.getId() == idRequest) {
+				return c;
+			}
+			
+		}
+		return null;
+	}
 }
