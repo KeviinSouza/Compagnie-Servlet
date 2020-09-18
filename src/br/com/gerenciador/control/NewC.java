@@ -1,19 +1,19 @@
-package br.com.gerenciador.servlet;
+package br.com.gerenciador.control;
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/newc")
-public class NewCompagnie extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import br.com.gerenciador.model.Compagnie;
+import br.com.gerenciador.model.DataBase;
 
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+public class NewC {
+
+	
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String name = request.getParameter("name");
 		String age = request.getParameter("age");
@@ -25,10 +25,9 @@ public class NewCompagnie extends HttpServlet {
 		DataBase db = new DataBase();
 		db.add(c);
 		
-		RequestDispatcher requestDispatch = request.getRequestDispatcher("/listc");
+		RequestDispatcher requestDispatch = request.getRequestDispatcher("/entry?action=list");
 		request.setAttribute("name", name);
 		request.setAttribute("age", age);
 		requestDispatch.forward(request, response);
-
 	}
 }

@@ -8,7 +8,7 @@
 	
 	<h1 style="text-align: center; color: white; font-style: italic;">Cadastro Nova Empresa Filiada</h1>
 	
-	<form action="/gerenciador/newc" method="post">
+	<form action="/gerenciador/entry?action=add" method="post">
 		Name = <input style="padding: 10px; border-radius: 7px; background-color: gris;" type="text" name="name"><br>
 		Age  = <input style="padding: 10px; border-radius: 7px; background-color: gris;" type="text" name="age"><br>
 		

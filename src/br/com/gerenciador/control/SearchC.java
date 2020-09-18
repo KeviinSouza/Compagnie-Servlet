@@ -1,20 +1,18 @@
-package br.com.gerenciador.servlet;
+package br.com.gerenciador.control;
 
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/sherchid")
-public class SherchID extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+import br.com.gerenciador.model.Compagnie;
+import br.com.gerenciador.model.DataBase;
 
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class SearchC {
+	
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String idRequest = request.getParameter("id");
 		Integer id = Integer.valueOf(idRequest);
@@ -25,7 +23,6 @@ public class SherchID extends HttpServlet {
 		request.setAttribute("c", c);
 		RequestDispatcher rd = request.getRequestDispatcher("/formPopulated.jsp");
 		rd.forward(request, response);
-		
 	}
 
 }

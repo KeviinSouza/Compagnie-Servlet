@@ -11,24 +11,24 @@
 </head>
 <body>
 	<core:if test="${not empty name && not empty age}">
-		<h1 style="text-align: center;">Hello New Compagnie !! Welcome to
+		<h1 style="text-align: center;">Hello New Company !! Welcome to
 			Show !!</h1>
 		<br>
 		<p
 			style="text-align: center; font-size: 20px; font-style: italic; color: black;">
-			Mr's ${name}, age of your Compagnie is: ${age} years.</p>
+			Mr's ${name}, age of your Company is: ${age} years.</p>
 	</core:if>
 	<core:if test="${empty name && empty age}">
 		<p style="text-align: center; font-size: 20px; color: red;">Form
-			not complite !! Please return.</p>
+			not complete !! Please return.</p>
 	</core:if>
 	<br>
-	<h1>List Compagnie's</h1>
+	<h1>List Company's </h1>
 	<ul>
 		<core:forEach items="${compagnie}" var="c">
 			<li>${c.name}- ${c.age}</li>
-			<a href="/gerenciador/remove?id=${c.id}">Remove</a> - <a
-				href="/gerenciador/sherchid?id=${c.id}">Edit</a>
+			<a href="/gerenciador/entry?action=remove&id=${c.id}">Remove</a> - <a
+				href="/gerenciador/entry?action=search&id=${c.id}">Edit</a>
 		</core:forEach>
 	</ul>
 
