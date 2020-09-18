@@ -19,7 +19,7 @@ public class ListCompagnie extends HttpServlet {
 		
 		DataBase db = new DataBase();
 		List<Compagnie> list = db.getCompagnie();
-		
+		int teste = 35;
 		request.setAttribute("compagnie", list);
 		RequestDispatcher rd = request.getRequestDispatcher("/listCompagnie.jsp");
 		rd.forward(request, response);
