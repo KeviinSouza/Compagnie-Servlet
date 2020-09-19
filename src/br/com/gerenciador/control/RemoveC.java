@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.gerenciador.model.DataBase;
 
-public class RemoveC {
+public class RemoveC implements Action{
 	
 	public String execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
